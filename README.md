@@ -44,4 +44,4 @@ https://docs.google.com/spreadsheets/d/1htf4SLbFCByG5rvC64L4ouXUvJyt1KdN9D-PC6g4
 
 ## Screen Transition Diagram
 
-[ Screen Transition Diagram](https://cacoo.com/diagrams/2QtVCTL1o6D0jmjV-072C6.png)
+![ Screen Transition Diagram](https://cacoo.com/diagrams/2QtVCTL1o6D0jmjV-072C6.png)
