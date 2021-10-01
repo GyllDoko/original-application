@@ -10,7 +10,7 @@ Things you may want to cover:
 ## Employmemnt Term Technology
 
 - Devise
-- Oauth
+- Fonction de message
 
 ## Technologie outside the curriculum
 
@@ -41,7 +41,14 @@ https://docs.google.com/spreadsheets/d/1htf4SLbFCByG5rvC64L4ouXUvJyt1KdN9D-PC6g4
 ## ER Diagram
 
 ![2QtVCTL1o6D0jmjV-C2DF1](https://user-images.githubusercontent.com/58073797/135506917-807f1dca-d098-4102-95df-07f5ec9bdab6.png)
+https://cacoo.com/diagrams/2QtVCTL1o6D0jmjV/C2DF1
 
 ## Screen Transition Diagram
 
 ![2QtVCTL1o6D0jmjV-072C6](https://user-images.githubusercontent.com/58073797/135506744-ddca766f-13e6-4bf6-a6c2-9d1514815663.png)
+
+https://cacoo.com/diagrams/2QtVCTL1o6D0jmjV/C2DF1
+
+## Wireframes
+
+https://cacoo.com/diagrams/2QtVCTL1o6D0jmjV/D7250
