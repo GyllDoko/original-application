@@ -40,7 +40,8 @@ https://docs.google.com/spreadsheets/d/1htf4SLbFCByG5rvC64L4ouXUvJyt1KdN9D-PC6g4
 
 ## ER Diagram
 
-![2QtVCTL1o6D0jmjV-C2DF1](https://user-images.githubusercontent.com/58073797/135506917-807f1dca-d098-4102-95df-07f5ec9bdab6.png)
+![ER Diagram](https://user-images.githubusercontent.com/58073797/135597564-e825e66d-0569-4279-aaea-1084ec2ce4fc.png)
+
 https://cacoo.com/diagrams/2QtVCTL1o6D0jmjV/C2DF1
 
 ## Screen Transition Diagram
