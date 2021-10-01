@@ -12,11 +12,13 @@ Things you may want to cover:
 - Devise
 - Fonction de message
 
-## Technologie outside the curriculum
+## Technologies outside the curriculum
 
 - React.Js
 - Cloudinary
 - Google Places API
+- Firebase
+- Fedapay Api (payment system)
 
 ## Execution Procedure
 
