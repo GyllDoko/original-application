@@ -2,19 +2,15 @@
 <html>
   <head>
     <title>FinalProject</title>
-    <%= csrf_meta_tags %> <%= csp_meta_tag %>
-     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-     <%=javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= csrf_meta_tags %> <%= csp_meta_tag %> <%= stylesheet_link_tag'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%=javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
-    <%= javascript_pack_tag 'Index' %>
   </head>
 
   <body>
-    <% if user_signed_in? %> <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %> <% else %> <%= link_to 'Sign In', new_user_session_path%>
-     <%= link_to 'Sign Up', new_user_registration_path %> <% end %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
