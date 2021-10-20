@@ -5,7 +5,11 @@ class OrdersController < ApplicationController
   def index
     @orders = Order.all
   end
-
+  def get_orders
+    @user = User.find(params[:user_id])
+    render json: @user.orders.all
+  end
+  
   # GET /orders/1 or /orders/1.json
   def show
   end
@@ -21,17 +25,20 @@ class OrdersController < ApplicationController
 
   # POST /orders or /orders.json
   def create
-    @order = Order.new(order_params)
-
-    respond_to do |format|
-      if @order.save
-        format.html { redirect_to @order, notice: "Order was successfully created." }
-        format.json { render :show, status: :created, location: @order }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @order.errors, status: :unprocessable_entity }
-      end
-    end
+    @user = User.find(params[:user_id])
+    @order = Order.create!(user_id: @user.id, status: true, total_price: params[:total_price], transaction_id: params[:transaction_id])
+    if params[:product]
+        OrderProduct.create!(order_id: @order.id, product_id: params[:product], quantity: params[:quantity])
+        render json: @order, status: :created
+    elsif params[:cart]
+      params[:cart][:cartItems].each do |product|         
+          OrderProduct.create!(order_id: @order.id, product_id: product[:id], quantity: product[:quantity])
+        end
+        render json: @order, status: :created
+    else
+      render json: @order.errors, status: :unprocessable_entity 
+    end 
+    
   end
 
   # PATCH/PUT /orders/1 or /orders/1.json

@@ -1,6 +1,12 @@
 class LikesController < ApplicationController
   before_action :set_like, only: %i[ show edit update destroy ]
 
+    def get_likes 
+      @comment = Comment.find_by(id: 
+      params[:comment_id]
+      )
+      render json: @comment.likes.all    
+    end
   # GET /likes or /likes.json
   def index
     @likes = Like.all
@@ -23,15 +29,18 @@ class LikesController < ApplicationController
   def create
     @like = Like.new(like_params)
 
-    respond_to do |format|
       if @like.save
-        format.html { redirect_to @like, notice: "Like was successfully created." }
-        format.json { render :show, status: :created, location: @like }
+        render json: @like, status: :created
       else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @like.errors, status: :unprocessable_entity }
+        render json: @like.errors, status: :unprocessable_entity 
       end
-    end
+    
+  end
+
+  def dislike
+    @like = Like.where(user_id: params[:user_id]).where(comment_id: params[:comment_id]).first
+    @like.destroy
+      head(:ok)
   end
 
   # PATCH/PUT /likes/1 or /likes/1.json
@@ -64,6 +73,6 @@ class LikesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def like_params
-      params.require(:like).permit(:user_id, :product_id, :value)
+      params.require(:like).permit(:user_id, :product_id, :value, :comment_id)
     end
 end

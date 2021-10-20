@@ -8,7 +8,6 @@ gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.11'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
-gem 'webpacker'
 gem 'rails_admin', '~> 2.0'
 gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
@@ -16,7 +15,12 @@ gem 'faker'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem 'rexml'
-
+gem 'jquery-rails'
+gem 'rack-cors'
+gem 'simple_token_authentication', '~> 1.0'
+gem 'carrierwave'
+gem 'cloudinary'
+gem 'dotenv-rails', '~> 2.1', '>= 2.1.1'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

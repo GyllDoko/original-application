@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_10_04_100517) do
+ActiveRecord::Schema.define(version: 2021_10_19_155358) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,6 +58,8 @@ ActiveRecord::Schema.define(version: 2021_10_04_100517) do
     t.integer "value"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "comment_id"
+    t.index ["comment_id"], name: "index_likes_on_comment_id"
     t.index ["product_id"], name: "index_likes_on_product_id"
     t.index ["user_id"], name: "index_likes_on_user_id"
   end
@@ -78,6 +80,7 @@ ActiveRecord::Schema.define(version: 2021_10_04_100517) do
     t.float "total_price"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "transaction_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
@@ -90,6 +93,7 @@ ActiveRecord::Schema.define(version: 2021_10_04_100517) do
     t.bigint "shop_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "image_tmp"
     t.index ["category_id"], name: "index_products_on_category_id"
     t.index ["shop_id"], name: "index_products_on_shop_id"
   end
@@ -112,6 +116,7 @@ ActiveRecord::Schema.define(version: 2021_10_04_100517) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "logo_tmp"
     t.index ["user_id"], name: "index_shops_on_user_id"
   end
 
@@ -132,6 +137,11 @@ ActiveRecord::Schema.define(version: 2021_10_04_100517) do
     t.string "unconfirmed_email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "authentication_token", limit: 30
+    t.string "first_name"
+    t.string "last_name"
+    t.integer "phone_number"
+    t.index ["authentication_token"], name: "index_users_on_authentication_token", unique: true
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
@@ -141,6 +151,7 @@ ActiveRecord::Schema.define(version: 2021_10_04_100517) do
   add_foreign_key "cards", "users"
   add_foreign_key "comments", "products"
   add_foreign_key "comments", "users"
+  add_foreign_key "likes", "comments"
   add_foreign_key "likes", "products"
   add_foreign_key "likes", "users"
   add_foreign_key "order_products", "orders"

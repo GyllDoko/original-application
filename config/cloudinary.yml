@@ -1,0 +1,9 @@
+development:
+  cloud_name: "dmhd5xosd"
+  api_key: "533619495463562"
+  api_secret: "43gKnnrVqqZPZZ0KO8OgyE-vWn0"
+
+production:
+  cloud_name: "dmhd5xosd"
+  api_key: "533619495463562"
+  api_secret: "43gKnnrVqqZPZZ0KO8OgyE-vWn0"

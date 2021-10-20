@@ -1,0 +1,10 @@
+json.data{
+    json.user{
+        json.call(
+        @user,
+        :email,
+        :id,
+        :authentication_token
+        )
+    }
+}

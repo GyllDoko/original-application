@@ -6,6 +6,18 @@ class OrderProductsController < ApplicationController
     @order_products = OrderProduct.all
   end
 
+  def get_orders_products
+    @order_products = OrderProduct.where(order_id: params[:order_id])
+    products =[]
+    @order_products.each do |item|
+      @product = Product.find(item.product_id)
+      data = {order_product: item, product: @product}
+      products << data 
+    end
+    render json: products
+  end
+  
+
   # GET /order_products/1 or /order_products/1.json
   def show
   end

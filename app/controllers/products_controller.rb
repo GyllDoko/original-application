@@ -56,6 +56,13 @@ class ProductsController < ApplicationController
     end
   end
 
+  def get_products
+      @category = Category.where(name: params[:category]).first
+      @products = Product.where(category_id: @category.id)
+      
+      render json: @products, status: :ok
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_product
