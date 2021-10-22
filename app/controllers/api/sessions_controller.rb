@@ -1,4 +1,5 @@
-class SessionsController < ApplicationController
+module Api
+    class SessionsController < ApplicationController
     def show
         current_user ? head(:ok) : head(:unauthorized)
     end
@@ -19,4 +20,5 @@ class SessionsController < ApplicationController
             head(:unauthorized)
         end
     end
+end
 end

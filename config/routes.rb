@@ -10,12 +10,12 @@ Rails.application.routes.draw do
   resources :products
   resources :shops
   resources :categories
- 
-  resources :users, only: [:create, :update]
- 
- 
-  resources :sessions
-  #devise_for :users
+  namespace :api do
+    resources :users, only: [:create, :update]
+    resources :sessions
+  end
+  
+  devise_for :users
   get "get_orders/:user_id", to: "orders#get_orders"
   get "get_orders_products/:order_id", to: "order_products#get_orders_products"
   get "get_products/:category", to: "products#get_products"
@@ -24,8 +24,6 @@ Rails.application.routes.draw do
   get "get_likes/:comment_id", to: "likes#get_likes"
   post "dislike", to:"likes#dislike"
   get "homepage/home"
-  get "/user", to: 'homepage#user'
-  get '/app', to: 'homepage#app', as: 'app'
   root 'homepage#home'
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
