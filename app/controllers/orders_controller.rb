@@ -29,13 +29,13 @@ class OrdersController < ApplicationController
     @order = Order.create!(user_id: @user.id, status: true, total_price: params[:total_price], transaction_id: params[:transaction_id])
     if params[:product]
         OrderProduct.create!(order_id: @order.id, product_id: params[:product], quantity: params[:quantity])
-        OrderMailer.order_mail(@user)
+        OrderMailer.order_mail(@user).deliver
         render json: @order, status: :created
     elsif params[:cart]
       params[:cart][:cartItems].each do |product|         
           OrderProduct.create!(order_id: @order.id, product_id: product[:id], quantity: product[:quantity])
         end
-        OrderMailer.order_mail(@user)
+        OrderMailer.order_mail(@user).deliver
         render json: @order, status: :created
     else
       render json: @order.errors, status: :unprocessable_entity 
