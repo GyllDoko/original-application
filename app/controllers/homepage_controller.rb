@@ -10,7 +10,7 @@ class HomepageController < ApplicationController
     end
     
     sign_in @user
-    redirect_to root_path
+    redirect_to rails_admin_path
   end
   
 end
