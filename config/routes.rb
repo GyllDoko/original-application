@@ -23,6 +23,7 @@ Rails.application.routes.draw do
   get "get_comment_user/:user_id", to: "comments#get_comment_user"
   get "get_likes/:comment_id", to: "likes#get_likes"
   post "dislike", to:"likes#dislike"
+  get "guess_admin", to: "homepage#guest_admin"
   get "homepage/home"
   root 'homepage#home'
 
