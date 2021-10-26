@@ -1,0 +1,99 @@
+fr:
+  activerecord:
+    models:
+      adress: Adresse #g
+      card: Carte #g
+      category: Catégorie #g
+      comment: Commentaire #g
+      like: Aimer #g
+      order: Commande #g
+      order_product: produit de Commander #g
+      product: Produit #g
+      rating: Évaluation #g
+      shop: Boutique #g
+      user: Utilisateur #g
+
+    attributes:
+      adress:
+        latitude: Latitude #g
+        longitude: Longitude #g
+        user: :activerecord.models.user #g
+
+      card:
+        cvv: CVV #g
+        deadline: Date limite #g
+        number: Nombre #g
+        owner_first_name: Prénom du propriétaire #g
+        owner_last_name: Nom du propriétaire #g
+        user: :activerecord.models.user #g
+
+      category:
+        name: Nom #g
+        products: Produits #g
+
+      comment:
+        description: La description #g
+        likes: Aime #g
+        product: :activerecord.models.product #g
+        user: :activerecord.models.user #g
+
+      like:
+        comment: :activerecord.models.comment #g
+        product: :activerecord.models.product #g
+        user: :activerecord.models.user #g
+        value: Valeur #g
+
+      order:
+        order_products: produits de comande #g
+        status: Statut #g
+        total_price: Prix total #g
+        user: :activerecord.models.user #g
+
+      order_product:
+        order: :activerecord.models.order #g
+        product: :activerecord.models.product #g
+        quantity: Quantité #g
+
+      product:
+        category: :activerecord.models.category #g
+        comments: commentaires #g
+        desccription: Description #g
+        image: Image #g
+        image_tmp: Image tmp #g
+        name: Nom #g
+        price: Prix #g
+        shop: :activerecord.models.shop #g
+
+      rating:
+        note: Note #g
+        product: :activerecord.models.product #g
+        user: :activerecord.models.user #g
+
+      shop:
+        adress: Adresse #g
+        contact: Contact #g
+        logo: Logo #g
+        logo_tmp: Logo tmp #g
+        name: Nom #g
+        user: :activerecord.models.user #g
+
+      user:
+        authentication_token: Jeton d'authentification #g
+        confirmation_sent_at: Confirmation envoyée à #g
+        confirmation_token: Jeton de confirmation #g
+        confirmed_at: Confirmé à #g
+        current_sign_in_at: Connexion actuelle à #g
+        current_sign_in_ip: IP de connexion actuelle #g
+        email: E-mail #g
+        encrypted_password: Mot de passe crypté #g
+        first_name: Prénom #g
+        is_admin: Est administrateur #g
+        last_name: Nom de famille #g
+        last_sign_in_at: Dernière connexion à #g
+        last_sign_in_ip: Dernière connexion IP #g
+        orders: Commandes #g
+        phone_number: Numéro de téléphone #g
+        remember_created_at: Rappelez-vous créé à #g
+        reset_password_sent_at: Réinitialiser le mot de passe envoyé à #g
+        reset_password_token: Réinitialiser le jeton de mot de passe #g
+        unconfirmed_email: E-mail non confirmé #g
